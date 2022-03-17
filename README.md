@@ -19,7 +19,7 @@ Pull the git repository:
 git clone https://github.com/AmineSaffar/add-mission-client-launch.git
 ```
 
-Pull the client image from the aws public registry:
+Pull the client image from the aws public registry(1.5GB):
 
 ```bash
 docker pull public.ecr.aws/f7d4x8o5/mission-client-add:latest
