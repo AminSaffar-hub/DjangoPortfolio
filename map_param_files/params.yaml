@@ -1,0 +1,27 @@
+client_params:
+  api_token: ""  # Contact lmad to receive an api key.
+  vehicle_id: ""  # Vehicle id is assigned by LMAD.
+  server: "lmad-avmm-nlb-nokia-test-502f2f9d842c8c39.elb.eu-west-1.amazonaws.com:50051"
+  session_time_h: 4
+  reconnect_initial_backoff_s: 5
+  reconnect_backoff_multiplier: 10
+  reconnect_max_backoff_mn: 10
+  report_bumper: false 
+  distance_from_stop_tolerance_m: 6
+  can_leave_endpoint_check_frequency_s: 5
+  wait_after_dropoff_s : 2
+  wait_before_failing_command_mn: 5
+  traj_restart_period_s: 30
+  traj_restart_time_mn: 2
+  turning_lights_detection_distance_m: 7
+  turning_lights_deviation_deg: 8.00
+
+
+add_wrapper_params:
+  navsat_topic: "/add1/sensors/gnss/fix"
+  odom_topic: "/add1/odom"
+  brakes_topic: "/add1/sensors/brakes_disabled"
+  bumper_topic: "/add1/sensors/safety_status"
+  move_base_status_topic: "/add1/move_base/status"
+  goal_frame: "odom"
+  gps_frame: "add1/gnss"
