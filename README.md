@@ -16,7 +16,7 @@ rosmaster_configs.env: the file containing environment variables used to connect
 Pull the git repository:
 
 ```bash
-git clone https://github.com/AmineSaffar/add-mission-client-launch.git
+git clone https://github.com/AmineSaffar/add-mission-client.git
 ```
 
 Pull the client image from the aws public registry(1.5GB):
