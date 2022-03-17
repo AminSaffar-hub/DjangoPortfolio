@@ -35,13 +35,13 @@ docker tag public.ecr.aws/f7d4x8o5/mission-client-add:latest mission-client-add:
 if there is already a running roscore:
 
 ```bash
-cd /path/to/add/launch/repostiory
+cd add-mission-client
 docker compose --profile without-rosmaster up
 ```
 
 if there is no roscore running:
 
 ```bash
-cd /path/to/add/launch/repostiory
+cd add-mission-client
 docker compose --profile with-rosmaster up
 ```
