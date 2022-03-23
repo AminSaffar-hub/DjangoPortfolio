@@ -16,7 +16,7 @@ rosmaster_configs.env: the file containing environment variables used to connect
 Pull the git repository:
 
 ```bash
-git clone https://github.com/AmineSaffar/add-mission-client-launch.git
+git clone https://github.com/AmineSaffar/add-mission-client.git
 ```
 
 Pull the client image from the aws public registry(1.5GB):
@@ -35,14 +35,14 @@ docker tag public.ecr.aws/f7d4x8o5/mission-client-add:latest mission-client-add:
 if there is already a running roscore:
 
 ```bash
-cd /path/to/add/launch/repostiory
+cd add-mission-client
 docker compose --profile without-rosmaster up
 ```
 
 if there is no roscore running:
 
 ```bash
-cd /path/to/add/launch/repostiory
+cd add-mission-client
 docker compose --profile with-rosmaster up
 ```
 
