@@ -13,6 +13,7 @@ services:
         command: stdbuf -o L roscore
         profiles:
         - "with-rosmaster"
+        - "test-with-rosmaster"
 
     #################
     ## mission client ##
@@ -52,5 +53,43 @@ services:
         command: roslaunch --wait client mission-client.launch
         profiles:
             - "without-rosmaster"
+        tty: true
+
+    ############################
+    ## add communication test ##
+    ############################
+
+    add-communication-test-rosmaster:
+        image: mission-client-add:latest
+        container_name: add-communication-client
+        network_mode: host
+        env_file:
+            - *env-config
+            - *model-config
+        environment:
+            - ROS_DISTRO=melodic
+        volumes:
+            - ./map_param_files:/mount/client_configs
+        command: roslaunch --wait robot_wrappers add-communication-test.launch
+        profiles:
+            - "test-without-rosmaster"
+        tty: true
+
+    add-communication-test:
+        image: mission-client-add:latest
+        container_name: add-communication-client
+        depends_on:
+            - rosmaster
+        network_mode: host
+        env_file:
+            - *env-config
+            - *model-config
+        environment:
+            - ROS_DISTRO=melodic
+        volumes:
+            - ./map_param_files:/mount/client_configs
+        command: roslaunch --wait robot_wrappers add-communication-test.launch
+        profiles:
+            - "test-with-rosmaster"
         tty: true
 

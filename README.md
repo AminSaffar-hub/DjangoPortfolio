@@ -45,3 +45,22 @@ if there is no roscore running:
 cd /path/to/add/launch/repostiory
 docker compose --profile with-rosmaster up
 ```
+
+## Updating the client
+to update the client re-reun the installation instructions.
+
+## Testing communication:
+
+if there is already a running roscore:
+
+```bash
+cd /path/to/add/launch/repostiory
+docker compose --profile test-without-rosmaster up
+```
+
+if there is no roscore running:
+
+```bash
+cd /path/to/add/launch/repostiory
+docker compose --profile test-with-rosmaster up
+```
