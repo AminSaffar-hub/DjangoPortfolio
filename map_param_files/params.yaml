@@ -1,7 +1,7 @@
 client_params:
   api_token: ""  # Contact lmad to receive an api key.
   vehicle_id: ""  # Vehicle id is assigned by LMAD.
-  server: "lmad-avmm-nlb-nokia-test-502f2f9d842c8c39.elb.eu-west-1.amazonaws.com:50051"
+  server: "stage.lmad.eu:81"
   session_time_h: 4
   reconnect_initial_backoff_s: 5
   reconnect_backoff_multiplier: 10
@@ -22,6 +22,6 @@ add_wrapper_params:
   odom_topic: "/add1/odom"
   brakes_topic: "/add1/sensors/brakes_disabled"
   bumper_topic: "/add1/sensors/safety_status"
-  move_base_status_topic: "/add1/move_base/status"
-  goal_frame: "odom"
-  gps_frame: "add1/gnss"
+  cmd_vel_mux_topic: "/add1/cmd_vel_mux/active"
+  action_name_prefix: "/add1/move_base"
+  utm_frame: "utm"

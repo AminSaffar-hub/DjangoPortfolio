@@ -55,12 +55,12 @@ if there is already a running roscore:
 
 ```bash
 cd /path/to/add/launch/repostiory
-docker compose --profile test-without-rosmaster up
+docker-compose --profile test-without-rosmaster up
 ```
 
 if there is no roscore running:
 
 ```bash
 cd /path/to/add/launch/repostiory
-docker compose --profile test-with-rosmaster up
+docker-compose --profile test-with-rosmaster up
 ```
