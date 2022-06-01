@@ -14,6 +14,7 @@ services:
         profiles:
         - "with-rosmaster"
         - "test-with-rosmaster"
+        - "test-locker-with-rosmaster"
 
     #################
     ## mission client ##
@@ -92,4 +93,44 @@ services:
         profiles:
             - "test-with-rosmaster"
         tty: true
+
+    ############################
+    ## add locker test ##
+    ############################
+
+    add-locker-test-rosmaster:
+        image: mission-client-add:latest
+        container_name: add-locker-client
+        network_mode: host
+        env_file:
+            - *env-config
+            - *model-config
+        environment:
+            - ROS_DISTRO=melodic
+        volumes:
+            - ./map_param_files:/mount/client_configs
+        command: roslaunch --wait robot_wrappers add-locker-test.launch
+        profiles:
+            - "test-locker-without-rosmaster"
+        tty: true
+
+    add-locker-test:
+        image: mission-client-add:latest
+        container_name: add-locker-client
+        depends_on:
+            - rosmaster
+        network_mode: host
+        env_file:
+            - *env-config
+            - *model-config
+        environment:
+            - ROS_DISTRO=melodic
+        volumes:
+            - ./map_param_files:/mount/client_configs
+        command: roslaunch --wait robot_wrappers add-locker-test.launch
+        profiles:
+            - "test-locker-with-rosmaster"
+        tty: true
+
+
 

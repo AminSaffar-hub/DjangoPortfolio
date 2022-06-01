@@ -64,3 +64,20 @@ if there is no roscore running:
 cd /path/to/add/launch/repostiory
 docker-compose --profile test-with-rosmaster up
 ```
+
+## Testing locker communication:
+
+if there is already a running roscore:
+
+```bash
+cd /path/to/add/launch/repostiory
+docker-compose --profile test-locker-without-rosmaster up
+```
+
+if there is no roscore running:
+
+```bash
+cd /path/to/add/launch/repostiory
+docker-compose --profile test-locker-with-rosmaster up
+```
+

@@ -1,6 +1,6 @@
 client_params:
-  api_token: ""  # Contact lmad to receive an api key.
-  vehicle_id: ""  # Vehicle id is assigned by LMAD.
+  api_token: ""
+  vehicle_id: ""
   server: "stage.lmad.eu:81"
   session_time_h: 4
   reconnect_initial_backoff_s: 5
@@ -23,5 +23,6 @@ add_wrapper_params:
   brakes_topic: "/add1/sensors/brakes_disabled"
   bumper_topic: "/add1/sensors/safety_status"
   cmd_vel_mux_topic: "/add1/cmd_vel_mux/active"
-  action_name_prefix: "/add1/move_base"
+  action_name_prefix: "/lmad/nav_goal"
+  locker_action_prefix: "/lmad/delivery_goal" 
   utm_frame: "utm"
