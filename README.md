@@ -12,7 +12,7 @@ rosmaster_configs.env: the file containing environment variables used to connect
     - Xserver for Ubuntu users:
         -installation guide: https://askubuntu.com/questions/213678/how-to-install-x11-xorg
 
-## Installation
+## Installing the client
 Pull the git repository:
 
 ```bash
@@ -31,53 +31,29 @@ tag the client image:
 docker tag public.ecr.aws/f7d4x8o5/mission-client-add:latest mission-client-add:latest 
 ```
 
-## Running the client
-if there is already a running roscore:
+## Installing the local locker app
+Pull the local locker image from the aws public registry(< 200 GB):
+
+```bash
+docker pull public.ecr.aws/f7d4x8o5/local-locker-add:latest
+```
+
+tag the local locker image:
+
+```bash
+docker tag public.ecr.aws/f7d4x8o5/local-locker-add:latest local-locker-add:latest
+```
+
+## Running the client and the local locker app
+```bash
+roslaunch rosbridge_server rosbridge_websocket.launch
+```
 
 ```bash
 cd add-mission-client
 docker compose --profile without-rosmaster up
 ```
 
-if there is no roscore running:
-
-```bash
-cd add-mission-client
-docker compose --profile with-rosmaster up
-```
-
-## Updating the client
+## Updating
 to update the client re-reun the installation instructions.
-
-## Testing communication:
-
-if there is already a running roscore:
-
-```bash
-cd /path/to/add/launch/repostiory
-docker-compose --profile test-without-rosmaster up
-```
-
-if there is no roscore running:
-
-```bash
-cd /path/to/add/launch/repostiory
-docker-compose --profile test-with-rosmaster up
-```
-
-## Testing locker communication:
-
-if there is already a running roscore:
-
-```bash
-cd /path/to/add/launch/repostiory
-docker-compose --profile test-locker-without-rosmaster up
-```
-
-if there is no roscore running:
-
-```bash
-cd /path/to/add/launch/repostiory
-docker-compose --profile test-locker-with-rosmaster up
-```
 

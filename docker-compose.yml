@@ -2,6 +2,7 @@ version: "3.7"
 
 x-shared-env-vars: &env-config rosmaster_configs.env
 x-model-env-vars: &model-config model_configs.env
+x-locker-env-vars: &locker-config local_locker_configs.env
 
 services:
     rosmaster:
@@ -94,42 +95,17 @@ services:
             - "test-with-rosmaster"
         tty: true
 
-    ############################
-    ## add locker test ##
-    ############################
 
-    add-locker-test-rosmaster:
-        image: mission-client-add:latest
-        container_name: add-locker-client
+    ############################
+    ##   local locker add     ##
+    ############################
+    local-locker:
+        image: local-locker-add:latest
+        container_name: add-local-locker
         network_mode: host
-        env_file:
-            - *env-config
-            - *model-config
-        environment:
-            - ROS_DISTRO=melodic
-        volumes:
-            - ./map_param_files:/mount/client_configs
-        command: roslaunch --wait robot_wrappers add-locker-test.launch
         profiles:
-            - "test-locker-without-rosmaster"
-        tty: true
-
-    add-locker-test:
-        image: mission-client-add:latest
-        container_name: add-locker-client
-        depends_on:
-            - rosmaster
-        network_mode: host
-        env_file:
-            - *env-config
-            - *model-config
-        environment:
-            - ROS_DISTRO=melodic
-        volumes:
-            - ./map_param_files:/mount/client_configs
-        command: roslaunch --wait robot_wrappers add-locker-test.launch
-        profiles:
-            - "test-locker-with-rosmaster"
+            - "with-rosmaster"
+            - "without-rosmaster"
         tty: true
 
 

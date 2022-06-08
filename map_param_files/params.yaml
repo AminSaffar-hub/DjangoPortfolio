@@ -1,7 +1,7 @@
 client_params:
   api_token: ""
   vehicle_id: ""
-  server: "stage.lmad.eu:81"
+  server: "backend.lmad.eu:85"
   session_time_h: 4
   reconnect_initial_backoff_s: 5
   reconnect_backoff_multiplier: 10
@@ -9,7 +9,7 @@ client_params:
   report_bumper: false 
   distance_from_stop_tolerance_m: 6
   can_leave_endpoint_check_frequency_s: 5
-  wait_after_dropoff_s : 2
+  wait_after_dropoff_s : 10
   wait_before_failing_command_mn: 5
   traj_restart_period_s: 30
   traj_restart_time_mn: 2
