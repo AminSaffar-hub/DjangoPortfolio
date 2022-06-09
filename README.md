@@ -11,6 +11,7 @@ rosmaster_configs.env: the file containing environment variables used to connect
 - Xserver:
     - Xserver for Ubuntu users:
         -installation guide: https://askubuntu.com/questions/213678/how-to-install-x11-xorg
+- rosbridge (http://wiki.ros.org/rosbridge_suite)
 
 ## Installing the client
 Pull the git repository:
