@@ -11,5 +11,6 @@ class PersonalInformationAdmin(admin.ModelAdmin):
 
 admin.site.register(PersonalInformation)
 admin.site.register(About)
-admin.site.register(Projects)
-admin.site.register(Skills)
+admin.site.register(Project)
+admin.site.register(Skill)
+admin.site.register(Contact)
