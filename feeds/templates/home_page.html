@@ -84,7 +84,7 @@
 
             <div class="small-container ">
                 <div class="row">
-                    <div class="col-md-6 initial-0 aos-init " data-aos="zoom-in"
+                    <div class="align-items-center initial-0 aos-init " data-aos="zoom-in"
                         data-aos-delay="200">
                         <p id="hey">HEY THERE !</p>
                         {% for infor in info %}
@@ -102,10 +102,10 @@
                         </div>
 
                     </div>
-                    <div class="col-md-6 initial-1 aos-init" data-aos="zoom-in"
+                    <!-- <div class="col-md-6 initial-1 aos-init" data-aos="zoom-in"
                         data-aos-delay="300">
                         <img src="{{ infor.avatar.url }}" alt="">
-                    </div>
+                    </div> -->
                     {% endfor %}
 
                 </div>
@@ -120,8 +120,8 @@
             <div class="small-container2 ">
                 <div class="row2 initial-3">
                     {% for aboutme in about %}
-                    <div class="col-md-6 aos-init" data-aos="fade-up-right" data-aos-delay="700">
-                        <img src="{{aboutme.about_avatar.url}}" alt="">
+                    <div class="col-md-auto aos-init" data-aos="fade-up-right" data-aos-delay="700">
+                        <img src="{{aboutme.about_avatar.url}}" alt="personal photo">
                     </div>
                     <div class="col-md-6 initial-4">
                         <div class="title aos-init" data-aos="zoom-in" data-aos-delay="200">
