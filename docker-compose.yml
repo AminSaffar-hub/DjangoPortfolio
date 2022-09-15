@@ -99,14 +99,14 @@ services:
     ############################
     ##   local locker add     ##
     ############################
-    local-locker:
-        image: local-locker-add:latest
-        container_name: add-local-locker
-        network_mode: host
-        profiles:
-            - "with-rosmaster"
-            - "without-rosmaster"
-        tty: true
+    # local-locker:
+    #     image: local-locker-add:latest
+    #     container_name: add-local-locker
+    #     network_mode: host
+    #     profiles:
+    #         - "with-rosmaster"
+    #         - "without-rosmaster"
+    #     tty: true
 
 
 

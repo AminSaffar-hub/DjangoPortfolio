@@ -1,0 +1,41 @@
+{
+        "type": "FeatureCollection", 
+        "features": [
+        {
+                "type": "Feature", 
+                "properties": {
+                        "id": 1,
+                        "bidir": false, 
+                        "speedAverage": 1.5,
+                        "time": 60,
+                        "name": "p1=p2=100=traj.bag",
+                        "length": 67
+                }, 
+                "geometry": {
+                        "type": "LineString", 
+                        "coordinates": [
+                               [2.098944, 41.373083],
+                               [2.098083, 41.372750]
+                        ]
+                 }
+        },
+        {
+                "type": "Feature", 
+                "properties": {
+                        "id": 2,
+                        "bidir": false, 
+                        "speedAverage": 1.5,
+                        "time": 60,
+                        "name": "p2=p1=100=traj.bag",
+                        "length": 67
+                }, 
+                "geometry": {
+                        "type": "LineString", 
+                        "coordinates": [
+                               [2.098083, 41.372750],
+                               [2.098944, 41.373083]
+                        ]
+                 }
+        }
+        ]
+}

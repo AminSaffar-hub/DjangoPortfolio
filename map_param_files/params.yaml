@@ -1,12 +1,13 @@
 client_params:
-  api_token: ""
-  vehicle_id: ""
-  server: "backend.lmad.eu:85"
+  api_token: "LOGISMILE_BACKEND_API_KEY"
+  vehicle_id: "GIM_SPO1"
+  server: "stage.lmad.eu:85"
+  path_to_geojson: "/mount/client_configs/trajectories.json" # this is a fixed param should not be changed by operators.
   session_time_h: 4
   reconnect_initial_backoff_s: 5
   reconnect_backoff_multiplier: 10
   reconnect_max_backoff_mn: 10
-  report_bumper: false 
+  report_bumper: false
   distance_from_stop_tolerance_m: 6
   can_leave_endpoint_check_frequency_s: 5
   wait_after_dropoff_s : 10
@@ -19,10 +20,6 @@ client_params:
 
 add_wrapper_params:
   navsat_topic: "/add1/sensors/gnss/fix"
-  odom_topic: "/add1/odom"
-  brakes_topic: "/add1/sensors/brakes_disabled"
-  bumper_topic: "/add1/sensors/safety_status"
-  cmd_vel_mux_topic: "/add1/cmd_vel_mux/active"
   action_name_prefix: "/lmad/nav_goal"
-  locker_action_prefix: "/lmad/delivery_goal" 
-  utm_frame: "utm"
+  locker_action_prefix: "/lmad/delivery_goal"
+  goal_frame: "utm"
