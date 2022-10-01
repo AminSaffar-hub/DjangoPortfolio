@@ -54,16 +54,8 @@
                             <li class="active"><a href="#home">Home</a></li>
                             <li><a href="#about">About</a></li>
                             <li><a href="#skills">Skills</a></li>
-                            <!-- <li><a href="#portfolio">Portfolio</a></li> -->
-                            <li><a href="#work">My Work</a></li>
-
+                            <li><a href="#projects">My projects</a></li>
                             <li><a href="#contact">Contact</a></li>
-                            <!-- <div class="invert pl-4 " id="theme-button">
-                                <ion-icon name='contrast-outline' style="color:White"></ion-icon>
-                            </div> -->
-                            <!--  -->
-
-
                         </ul>
 
                     </nav>
@@ -173,37 +165,39 @@
     </section>
 
 
+    <section class="projects its-me" id="projects">
+        <div class="container">
+            <div class="container" id="work">
+                <div class="title2">
+                    <h1>Projects</h1>
+                </div>
+                <div class="small-container">
+                    <div class="row3">
+                        {% for sys in projects %}
+                        <div class="card initial-6  w- aos-init" data-aos="zoom-in"
+                            data-aos-delay="500">
 
-    <div class="work">
-        <div class="container" id="work">
-            <div class="title2">
-                <h1>MY WORK</h1>
-            </div>
-            <div class="small-container">
-                <div class="row3">
-                    {% for sys in projects %}
-                    <div class="card initial-6  w- aos-init" data-aos="zoom-in"
-                        data-aos-delay="500">
-
-                        <img src="{{sys.image}}" alt="">
+                            <img src="{{sys.image.url}}" alt="">
 
 
-                        <div class="card-body col-5-info px-3 py-3">
-                            <h3 class="pb-1">{{sys.title}}</h3>
-                            <p class="pb-1">{{sys.skill}}</p>
-                            <button><a href="{{sys.link}}">VISIT</a></button>
+                            <div class="card-body col-5-info px-3 py-3">
+                                <h3 class="pb-1">{{sys.title}}</h3>
+                                <p class="pb-1">{{sys.skill}}</p>
+                                <a class="main-button ml-2" href="{{sys.link}}" target="_blank" rel="noopener noreferrer"> 
+                                    <button id="btn2">Visit</button>
+                                </a>
+
+                            </div>
 
                         </div>
+                        {% endfor %}
 
                     </div>
-                    {% endfor %}
 
                 </div>
-
             </div>
         </div>
-    </div>
-
+    </section>
 
 
     <footer id="contact">
