@@ -504,8 +504,8 @@ p.bar-skill-value {
 	display: flex;
 	justify-content: space-between;
 }
-.work {
-	max-width: 1250px !important;
+.projects {
+	max-width: 1400px !important;
 	margin: auto;
 }
 .row3 {
@@ -556,10 +556,10 @@ p.bar-skill-value {
 	background: rgb(0, 0, 0, 0.3) !important;
 	z-index: 10;
 }
-.title2 {
-	color: #dddada !important;
+.projects .title2 .h1 {
 	font-family: Candal, sans-serif;
-	padding-left: 20px;
+	color: #dddada;
+	font-size: 2.4rem;
 }
 .col-5-info {
 	padding: 15px 0;

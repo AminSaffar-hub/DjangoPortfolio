@@ -73,7 +73,6 @@
 
     <section class=" descript " id="home">
         <div class="container ">
-
             <div class="small-container ">
                 <div class="row">
                     <div class="align-items-center initial-0 aos-init " data-aos="zoom-in"
@@ -167,33 +166,26 @@
 
     <section class="projects its-me" id="projects">
         <div class="container">
-            <div class="container" id="work">
-                <div class="title2">
-                    <h1>Projects</h1>
-                </div>
-                <div class="small-container">
-                    <div class="row3">
+            <div class="title2">
+                <h1>Personal projects</h1>
+            </div>
+            <div class="small-container row3">
+                <div class="container-fluid py-2" style="overflow:scroll;">
+                    <div class="d-flex flex-row flex-nowrap">
                         {% for sys in projects %}
                         <div class="card initial-6  w- aos-init" data-aos="zoom-in"
-                            data-aos-delay="500">
-
+                        data-aos-delay="500" style="margin-right:3rem;min-width:20rem;min-height:20rem;">
                             <img src="{{sys.image.url}}" alt="">
-
-
                             <div class="card-body col-5-info px-3 py-3">
                                 <h3 class="pb-1">{{sys.title}}</h3>
                                 <p class="pb-1">{{sys.skill}}</p>
                                 <a class="main-button ml-2" href="{{sys.link}}" target="_blank" rel="noopener noreferrer"> 
                                     <button id="btn2">Visit</button>
                                 </a>
-
                             </div>
-
                         </div>
                         {% endfor %}
-
                     </div>
-
                 </div>
             </div>
         </div>
